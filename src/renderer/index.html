@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Twitch Desktop</title>
+</head>
+
+<body>
+    <div id="application"></div>
+    <script src="TwitchDesktop.js">
+    <script>
+        document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+    </script>
+
+    <!-- 
+    TO DEBUG TYPE THIS INTO CONSOLE:
+    require('remote').require('browser-window').addDevToolsExtension('./build/react-devtools'); 
+    -->
+</body>
