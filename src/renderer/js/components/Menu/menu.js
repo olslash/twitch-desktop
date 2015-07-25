@@ -7,7 +7,7 @@ class Menu extends React.Component {
         return (
             <div id="menu">
                 <h1>Menu</h1>
-                <div class="menulist"></div>
+                <div className="menulist"></div>
             </div>
         );
     }

@@ -6,7 +6,7 @@ class Navigation extends React.Component {
     render() {
         return (
             <div id="navigation">
-                <div class="navlist"></div>
+                <div className="navlist"></div>
             </div>
         );
     }
