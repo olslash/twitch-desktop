@@ -19,8 +19,10 @@ app.on('ready', function() {
     mainWindow = new BrowserWindow({
         width: 1280,
         height: 720,
+        "min-width": 1280,
+        "min-height": 720,
         resizable: true,
-        frame: true
+        frame: false
     });
     mainWindow.loadUrl('file://' + __dirname + '/../renderer/index.html');
 

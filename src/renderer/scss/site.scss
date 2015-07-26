@@ -1,9 +1,20 @@
-@import "bourbon";
-@import "neat";
-
 // Application Settings
 @import "settings";
 
+// SCSS Begins
+* {
+    margin: 0;
+    padding: 0;
+    font-family: $font;
+    font-weight: 400;
+}
+
+#twitchdesktop {
+    display: flex;
+    flex-direction: column;
+}
+
 #navigation {
-    
+    flex: 0 0 100%;
+    -webkit-app-region: drag;
 }

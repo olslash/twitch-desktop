@@ -2,11 +2,57 @@
 
 <head>
     <title>Twitch Desktop</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/site.css">
 </head>
 
 <body>
     <div id="application"></div>
+
+    <script>
+        // Electron imports
+        var remote = require('remote');
+        var Menu = remote.require('menu');
+        var MenuItem = remote.require('menu-item');
+
+        var menus = [
+            {
+                label: "File",
+                submenu: [
+                    {
+                        label: "Exit",
+                        selector: "exitApplication"
+                    }
+                ]
+            },
+            {
+                label: "View",
+                submenu: [
+                    {
+                        label: "Toggle Fullscreen",
+                        accelerator: 'CommandOrControl+F',
+                        click: function() { 
+                            remote.getCurrentWindow().setFullScreen(!remote.getCurrentWindow().isFullScreen()); 
+                        }
+                    },
+                    {
+                        label: 'Toggle Debug Mode',
+                        accelerator: 'Alt+CommandOrControl+I',
+                        click: function() { 
+                            remote.getCurrentWindow().toggleDevTools(); 
+                        }
+                    }
+                ]
+            }
+        ]
+
+        menu = Menu.buildFromTemplate(menus);
+        Menu.setApplicationMenu(menu);
+    </script>
+
     <script src="TwitchDesktop.js"></script>
     <script src="http://localhost:35729/livereload.js?snipver=1"></script>
-    </script>
+
 </body>

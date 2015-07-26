@@ -5,34 +5,46 @@ import React from 'react';
 import {Router, Route} from 'react-router';
 import {history} from 'react-router/lib/HashHistory';
 
+let mui = require("material-ui");
+
 // Components
-import Navigation from './components/Navigation/navigation';
-import Menu from './components/Menu/menu';
+import Header from './components/Header/header';
 
 // Views
 // import Featured from './views/Featured';
 
 // Main Application
+let ThemeManager = new mui.Styles.ThemeManager();
+ThemeManager.setTheme(ThemeManager.types.LIGHT);
+
 class Application extends React.Component {
+    constructor() {
+        super();
+    }
+
+    getChildContext() {
+        return {
+            muiTheme: ThemeManager.getCurrentTheme()
+        };
+    }
+
     render() {
         return (
             <div id="twitchdesktop">
-                <div className="header">
-                    <Menu />
-                    <Navigation />
-                </div>
+                <Header />
             </div>
         );
     }
 }
 
-React.render(<Application />, document.body);
+Application.childContextTypes = {
+    muiTheme: React.PropTypes.object
+}
 
 // Main render method for routing
-// React.render((
-//     <Router history={history}>
-//         <Route path="/" component={Application}>
-//             <Route path="featured" component={Featured} />
-//         </Route>
-//     </Router>
-// ), document.body);
+React.render((
+    <Router history={history}>
+        <Route path="/" component={Application}>
+        </Route>
+    </Router>
+), document.body);

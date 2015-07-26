@@ -42,8 +42,10 @@
   "dependencies": {
     "bluebird": "^2.9.33",
     "lodash": "^3.10.0",
+    "material-ui": "^0.10.1",
     "react": "^0.13.3",
     "react-router": "^1.0.0-beta3",
+    "react-tap-event-plugin": "^0.1.7",
     "superagent": "^1.2.0",
     "superagent-bluebird-promise": "^2.0.2",
     "uri": "^0.1.0"
