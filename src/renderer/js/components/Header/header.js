@@ -8,9 +8,7 @@ let mui = require("material-ui");
 let AppBar = mui.AppBar;
 let LeftNav = mui.LeftNav;
 let IconButton = mui.IconButton;
-let NavigationMenu = mui.Icons.NavigationMenu;
-let NavigationChevronLeft = mui.Icons.NavigationChevronLeft;
-let NavigationChevronRight = mui.Icons.NavigationChevronRight;
+let { NavigationMenu, NavigationChevronLeft, NavigationChevronRight } = mui.Icons;
 let { object } = React.PropTypes;
 
 let menuItems = [
