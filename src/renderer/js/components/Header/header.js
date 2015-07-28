@@ -12,38 +12,38 @@ let { NavigationMenu, NavigationChevronLeft, NavigationChevronRight } = mui.Icon
 let { object } = React.PropTypes;
 
 let menuItems = [
-  {route: 'featured',  text: 'Featured'},
-  {route: 'games',     text: 'Games'},
-  {route: 'channels',  text: 'Channels'},
-  {route: 'following', text: 'Following'}
+    {route: 'featured',  text: 'Featured'},
+    {route: 'games',     text: 'Games'},
+    {route: 'channels',  text: 'Channels'},
+    {route: 'following', text: 'Following'}
 ];
 
 
 class Header extends React.Component {
-  static get contextTypes() {
-    return {
-      router: object.isRequired
+    static get contextTypes() {
+        return {
+            router: object.isRequired
+        }
     }
-  }
 
-  handleMenuClick() {
-    this.refs.leftNav.open();
-  }
+    handleMenuClick() {
+        this.refs.leftNav.open();
+    }
 
-  handleMenuChange(e, key, payload) {
-    this.context.router.transitionTo(payload.route);
-  }
+    handleMenuChange(e, key, payload) {
+        this.context.router.transitionTo(payload.route);
+    }
 
-  render() {
-      return (
-          <div id="navigation">
-            <AppBar
-                title="Featured"
-                iconElementLeft={
+    render() {
+        return (
+            <div id="navigation">
+                <AppBar
+                    title="Featured"
+                    iconElementLeft={
                   <IconButton onClick={ this.handleMenuClick.bind(this) }>
                   <NavigationMenu />
                   </IconButton> }
-                iconElementRight={
+                    iconElementRight={
                   <div>
                     <IconButton onClick={ this.context.router.goBack }>
                       <NavigationChevronLeft />
@@ -53,14 +53,14 @@ class Header extends React.Component {
                     </IconButton>
                    </div>
                 }>
-              <LeftNav menuItems={menuItems}
-                       onChange={ this.handleMenuChange.bind(this) }
-                       docked={false}
-                       ref="leftNav"/>
-            </AppBar>
-          </div>
-      );
-  }
+                    <LeftNav menuItems={menuItems}
+                             onChange={ this.handleMenuChange.bind(this) }
+                             docked={false}
+                             ref="leftNav"/>
+                </AppBar>
+            </div>
+        );
+    }
 }
 
 export default Header;
