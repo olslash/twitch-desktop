@@ -48,8 +48,8 @@ class Header extends React.Component {
                     <IconButton onClick={ this.context.router.goBack }>
                       <NavigationChevronLeft />
                     </IconButton>
-                    <IconButton>
-                      <NavigationChevronRight onClick={ this.context.router.goForward } />
+                    <IconButton onClick={ this.context.router.goForward }>
+                      <NavigationChevronRight />
                     </IconButton>
                    </div>
                 }>
